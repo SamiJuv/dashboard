@@ -1,6 +1,7 @@
 import WidgetContainer from '../Containers/WidgetContainer'
 
-const WeatherWidget = () => {
+const WeatherWidget = ({ data }) => {
+  console.log(data);
   return (
     <WidgetContainer>
       <h2>Weather</h2>

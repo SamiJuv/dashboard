@@ -1,6 +1,14 @@
 import { createSlice, current } from '@reduxjs/toolkit'
+import { v4 as uuidv4 } from 'uuid'
 
-const initialState = []
+const initialState = [
+  {
+    id: uuidv4(),
+    type: 'sunrise_sunset',
+    weight: 0,
+    city: 'Riihimäki'
+  }
+]
 
 const widgetsSlice = createSlice({
   name: 'widgets',
@@ -14,7 +22,8 @@ const widgetsSlice = createSlice({
 
         state.push({
           type: payload,
-          weight: newWeight
+          weight: newWeight,
+          id: uuidv4()
         })
       }
     }
