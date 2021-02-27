@@ -1,6 +1,10 @@
+import WidgetLibrary from './WidgetLibrary/WidgetLibrary'
+
 const Sidebar = () => {
   return (
-    <h2>Sidebar</h2>
+    <div className="bg-gray-800 text-white pt-36 px-4">
+      <WidgetLibrary />
+    </div>
   )
 }
 

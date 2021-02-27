@@ -4,10 +4,12 @@ import Main from './components/Main/Main'
 
 function App() {
   return (
-    <div className="App">
+    <div className="bg-gray-50">
       <Header />
-      <Sidebar />
-      <Main />
+      <div className="flex flex-row h-screen">
+        <Sidebar />
+        <Main />
+      </div>
     </div>
   );
 }
