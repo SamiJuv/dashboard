@@ -1,13 +1,13 @@
 import { createSlice, current } from '@reduxjs/toolkit'
 import { v4 as uuidv4 } from 'uuid'
+import WidgetContainer from '../../components/Widgets/Containers/WidgetContainer';
 
 const initialState = [
-  {
+  /*{
     id: uuidv4(),
     type: 'sunrise_sunset',
-    weight: 0,
-    city: 'Riihimäki'
-  }
+    weight: 0
+  }*/
 ]
 
 const widgetsSlice = createSlice({
@@ -26,12 +26,18 @@ const widgetsSlice = createSlice({
           id: uuidv4()
         })
       }
+    },
+    updateSettings: {
+      reducer(state, { payload }) {
+        const widget = state.find(widget => widget.id === payload.id);
+        widget.settings = payload.settings;
+      }
     }
   }
 })
 
 const { actions, reducer } = widgetsSlice
 
-export const { addWidget } = actions
+export const { addWidget, updateSettings } = actions
 
 export default reducer
