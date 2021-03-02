@@ -1,23 +1,28 @@
 import { useForm } from 'react-hook-form'
 import WidgetContainer from '../Containers/WidgetContainer'
 
-const SunriseSunsetWidget = ({ data }) => {
-  const { city } = data;
+const SunriseSunsetWidget = ({ data, updateSettings }) => {
+  const { id, settings: widgetSettings } = data;
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = (formData) => {
-    console.log(formData);
+    const settings = {
+      id: id,
+      settings: formData
+    }
+
+    updateSettings(settings);
   };
 
   return (
     <WidgetContainer>
       <h2>Sunrise and sunset</h2>
       
-      {city && (
-        <h3>{city}</h3>
+      {widgetSettings && (
+        <h3>{widgetSettings.city}</h3>
       )}
 
-      {!city && (
+      {!widgetSettings && (
         <form onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor='city'>City</label>
           <input name='city' ref={register} />
