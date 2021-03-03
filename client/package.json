@@ -16,10 +16,11 @@
     "react-dom": "^17.0.1",
     "react-draggable": "^4.4.3",
     "react-hook-form": "^6.15.4",
+    "react-query": "^3.12.0",
     "react-redux": "^7.2.2",
     "react-router": "^5.2.0",
     "react-scripts": "4.0.3",
-    "sun-time": "^1.0.2",
+    "suncalc": "^1.8.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
